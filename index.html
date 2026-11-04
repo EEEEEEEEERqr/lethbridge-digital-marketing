@@ -12,12 +12,9 @@
     :root {
       --bg: #000000;
       --bg-elevated: #0a0a0a;
-      --bg-card: #0a0a0a;
       --border: #222222;
-      --border-hover: #444444;
       --text: #ffffff;
       --muted: #888888;
-      --accent: #ffffff;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -35,6 +32,14 @@
     @keyframes signatureDraw {
       0%   { opacity: 0; transform: translateY(10px); filter: blur(3px); }
       100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    @keyframes drift {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-40px); }
     }
 
     .reveal {
@@ -54,12 +59,53 @@
       animation: signatureDraw 1.3s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 2; }
+
+    /* ========== STARS ========== */
+    .stars {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .stars span {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: twinkle 3s ease-in-out infinite;
+    }
+    .stars span:nth-child(odd) { width: 1px; height: 1px; animation-duration: 4s; }
+    .stars span:nth-child(3n) { width: 3px; height: 3px; opacity: 0.25; animation-duration: 5s; }
+
+    /* ========== WAVY LINES ========== */
+    .waves {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.12;
+    }
+    .waves svg {
+      position: absolute;
+      width: 200%;
+      height: 100%;
+      left: -50%;
+    }
+    .waves path {
+      fill: none;
+      stroke: #fff;
+      stroke-width: 1;
+    }
 
     /* HEADER */
     header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(0,0,0,0.9);
+      background: rgba(0,0,0,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -98,6 +144,7 @@
     /* HERO */
     .hero {
       padding: 6rem 0 5rem; text-align: center; position: relative;
+      overflow: hidden;
     }
     .badge {
       display: inline-block;
@@ -135,7 +182,7 @@
     .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.25rem; }
 
     /* SECTIONS */
-    section { padding: 5.5rem 0; }
+    section { padding: 5.5rem 0; position: relative; }
     .section-label {
       font-size: 0.75rem; font-weight: 600; color: var(--muted);
       text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.7rem;
@@ -223,6 +270,7 @@
     .local-band {
       text-align: center; padding: 5rem 0;
       border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
     }
     .local-band h2 {
       font-family: 'Space Grotesk', sans-serif;
@@ -289,6 +337,7 @@
     .final-cta {
       text-align: center; padding: 6rem 0;
       border-top: 1px solid var(--border);
+      position: relative; overflow: hidden;
     }
     .final-cta h2 {
       font-family: 'Space Grotesk', sans-serif;
@@ -340,7 +389,9 @@
     </div>
   </header>
 
+  <!-- HERO with stars -->
   <section class="hero">
+    <div class="stars" id="hero-stars"></div>
     <div class="container">
       <div class="badge reveal">Built for Lethbridge & Southern Alberta</div>
       <h1 class="reveal">
@@ -397,44 +448,32 @@
       </div>
       <div class="service-grid">
         <div class="service-card reveal">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
           <h3>Local SEO & Google Maps</h3>
           <p>Rank in the “near me” pack. Optimized Google Business Profile, citations and reviews that drive calls and direction requests.</p>
         </div>
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
           <h3>Google Ads & PPC</h3>
           <p>High-intent search ads that only spend when someone is looking for what you offer. Tight geo-targeting across Lethbridge and surrounding towns.</p>
         </div>
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <h3>Social & Content</h3>
           <p>Consistent presence that builds trust with local residents and University of Lethbridge students and staff.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
           <h3>Websites that convert</h3>
           <p>Fast, mobile-first sites with clear calls-to-action and tracking so every visitor has a path to become a customer.</p>
         </div>
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M4 19l4-6 4 3 4-8 4 5"/></svg>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M4 19l4-6 4 3 4-8 4 5"/></svg></div>
           <h3>Analytics & Reporting</h3>
           <p>Simple dashboards showing leads, calls and ROI. No jargon — just the numbers that matter to a busy owner.</p>
         </div>
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2H22l-6 4.8 2.3 7.2L12 16.4 5.7 21.2 8 14 2 9.2h7.6z"/></svg>
-          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2H22l-6 4.8 2.3 7.2L12 16.4 5.7 21.2 8 14 2 9.2h7.6z"/></svg></div>
           <h3>Reputation</h3>
           <p>More 5-star Google reviews and smart responses that turn happy customers into your best local marketing channel.</p>
         </div>
@@ -472,7 +511,16 @@
     </div>
   </section>
 
+  <!-- LOCAL with waves -->
   <section class="local-band">
+    <div class="waves">
+      <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
+        <path d="M0,200 Q150,120 300,200 T600,200 T900,200 T1200,200" />
+        <path d="M0,240 Q150,160 300,240 T600,240 T900,240 T1200,240" />
+        <path d="M0,160 Q150,80 300,160 T600,160 T900,160 T1200,160" />
+        <path d="M0,280 Q200,200 400,280 T800,280 T1200,280" />
+      </svg>
+    </div>
     <div class="container">
       <h2 class="reveal">We actually understand</h2>
       <div class="signature reveal">Lethbridge.</div>
@@ -547,7 +595,9 @@
     </div>
   </section>
 
+  <!-- FINAL CTA with stars -->
   <section id="contact" class="final-cta">
+    <div class="stars" id="cta-stars"></div>
     <div class="container">
       <h2 class="reveal">Ready to get more of the right customers</h2>
       <div class="signature reveal">in Lethbridge?</div>
@@ -576,10 +626,26 @@
   </footer>
 
   <script>
+    // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Generate stars
+    function createStars(containerId, count) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      for (let i = 0; i < count; i++) {
+        const star = document.createElement('span');
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = (Math.random() * 4) + 's';
+        container.appendChild(star);
+      }
+    }
+    createStars('hero-stars', 60);
+    createStars('cta-stars', 40);
   </script>
 </body>
 </html>
