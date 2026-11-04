@@ -3,647 +3,840 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Effective Digital Marketing for Local Businesses in Lethbridge, Alberta</title>
-  <meta name="description" content="Grow your Lethbridge business with proven digital marketing. SEO, Google Ads, social media & websites tailored for southern Alberta local businesses. No fluff — real customers.">
+  <title>Digital Marketing for Lethbridge Businesses | Get Real Customers</title>
+  <meta name="description" content="Grow your Lethbridge business with digital marketing that actually brings customers through the door. Local SEO, Google Ads & more — built for southern Alberta.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0d9488;
-      --primary-dark: #0f766e;
-      --primary-light: #14b8a6;
-      --accent: #f59e0b;
+      --green: #0f766e;
+      --green-bright: #14b8a6;
+      --green-soft: #ccfbf1;
       --dark: #0f172a;
-      --gray: #64748b;
+      --muted: #64748b;
       --light: #f8fafc;
-      --white: #ffffff;
       --border: #e2e8f0;
+      --white: #fff;
     }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color: var(--dark);
       line-height: 1.6;
       background: var(--white);
+      -webkit-font-smoothing: antialiased;
     }
     a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; height: auto; }
 
-    /* Header */
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ========== LAYOUT ========== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ========== HEADER ========== */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(226,232,240,0.8);
+      transition: box-shadow 0.3s;
     }
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
+    header.scrolled {
+      box-shadow: 0 4px 20px rgba(15,23,42,0.06);
     }
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      height: 64px;
     }
     .logo {
       font-weight: 800;
-      font-size: 1.25rem;
-      color: var(--primary-dark);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
     }
-    .logo span { color: var(--dark); }
+    .logo span { color: var(--green); }
     .nav-links {
       display: flex;
       gap: 2rem;
       list-style: none;
     }
     .nav-links a {
+      font-size: 0.925rem;
       font-weight: 500;
-      color: var(--gray);
+      color: var(--muted);
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover { color: var(--dark); }
+
+    /* ========== BUTTONS ========== */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
+      gap: 0.4rem;
+      padding: 0.7rem 1.35rem;
+      border-radius: 8px;
       font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.2s;
-      cursor: pointer;
+      font-size: 0.95rem;
       border: none;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .btn-primary {
-      background: var(--primary);
+      background: var(--green);
       color: white;
+      box-shadow: 0 1px 2px rgba(15,118,110,0.2);
     }
     .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+      background: #0d5f59;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(15,118,110,0.25);
     }
     .btn-outline {
       background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
-    .btn-outline:hover {
-      background: var(--primary);
-      color: white;
-    }
-    .btn-lg {
-      padding: 1rem 2rem;
-      font-size: 1.125rem;
-    }
-
-    /* Hero */
-    .hero {
-      padding: 5rem 0 4rem;
-      background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: clamp(2.25rem, 5vw, 3.5rem);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
+      border: 1.5px solid var(--border);
       color: var(--dark);
     }
-    .hero h1 .highlight {
-      color: var(--primary);
+    .btn-outline:hover {
+      border-color: var(--green);
+      color: var(--green);
+      background: var(--green-soft);
     }
-    .hero p {
-      font-size: 1.25rem;
-      color: var(--gray);
-      max-width: 640px;
-      margin: 0 auto 2rem;
+    .btn-lg {
+      padding: 0.95rem 1.85rem;
+      font-size: 1.05rem;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      padding: 5.5rem 0 4.5rem;
+      background: linear-gradient(165deg, #f0fdfa 0%, #ffffff 55%);
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(20,184,166,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.4rem;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.2rem;
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+    .hero-sub {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 2.2rem;
+      line-height: 1.55;
     }
     .hero-ctas {
       display: flex;
-      gap: 1rem;
+      gap: 0.9rem;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
     }
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      padding-top: 2rem;
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 3.5rem;
+      flex-wrap: wrap;
+      padding-top: 2.5rem;
       border-top: 1px solid var(--border);
+      max-width: 720px;
+      margin: 0 auto;
     }
-    .stat {
+    .stat-item {
       text-align: center;
     }
-    .stat-number {
-      font-size: 2.25rem;
+    .stat-num {
+      font-size: 1.9rem;
       font-weight: 800;
-      color: var(--primary);
-      line-height: 1;
+      color: var(--green);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
     }
     .stat-label {
-      font-size: 0.9rem;
-      color: var(--gray);
-      margin-top: 0.35rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
     }
 
-    /* Sections */
-    section {
-      padding: 5rem 0;
+    /* ========== SECTIONS ========== */
+    section { padding: 5.5rem 0; }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.7rem;
+    }
+    .section-title {
+      font-size: clamp(1.7rem, 3.8vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 0.9rem;
+    }
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 540px;
+      line-height: 1.55;
     }
     .section-header {
       text-align: center;
-      max-width: 640px;
-      margin: 0 auto 3.5rem;
+      margin-bottom: 3.2rem;
     }
-    .section-header h2 {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
-    .section-header p {
-      color: var(--gray);
-      font-size: 1.125rem;
-    }
-    .badge {
-      display: inline-block;
-      background: #ccfbf1;
-      color: var(--primary-dark);
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.35rem 0.85rem;
-      border-radius: 999px;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
+    .section-header .section-desc {
+      margin: 0 auto;
     }
 
-    /* How it works */
+    /* ========== STEPS ========== */
     .steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
-    .step {
+    @media (max-width: 800px) {
+      .steps { grid-template-columns: 1fr; }
+    }
+    .step-card {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 1rem;
-      padding: 2rem;
-      transition: all 0.25s;
+      border-radius: 14px;
+      padding: 1.9rem;
+      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      position: relative;
+      overflow: hidden;
     }
-    .step:hover {
-      border-color: var(--primary-light);
-      box-shadow: 0 10px 30px rgba(13, 148, 136, 0.08);
-      transform: translateY(-4px);
+    .step-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--green);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .step-number {
-      width: 2.5rem;
-      height: 2.5rem;
-      background: var(--primary);
+    .step-card:hover {
+      border-color: #99f6e4;
+      box-shadow: 0 16px 40px rgba(15,118,110,0.08);
+      transform: translateY(-6px);
+    }
+    .step-card:hover::after { transform: scaleX(1); }
+    .step-num {
+      width: 36px;
+      height: 36px;
+      background: var(--green);
       color: white;
-      border-radius: 0.75rem;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      margin-bottom: 1.25rem;
-    }
-    .step h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-    }
-    .step p {
-      color: var(--gray);
       font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    .step-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.01em;
+    }
+    .step-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.55;
     }
 
-    /* Services / Features */
-    .features {
-      background: var(--light);
-    }
-    .feature-grid {
+    /* ========== SERVICES ========== */
+    .services { background: var(--light); }
+    .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
     }
-    .feature-card {
+    @media (max-width: 900px) {
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .service-grid { grid-template-columns: 1fr; }
+    }
+    .service-card {
       background: white;
-      border-radius: 1rem;
-      padding: 2rem;
       border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.7rem;
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .feature-icon {
-      width: 3rem;
-      height: 3rem;
-      background: #ccfbf1;
-      border-radius: 0.75rem;
+    .service-card:hover {
+      border-color: #99f6e4;
+      box-shadow: 0 12px 32px rgba(15,118,110,0.07);
+      transform: translateY(-4px);
+    }
+    .service-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--green-soft);
+      border-radius: 11px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+      margin-bottom: 1.1rem;
+      transition: transform 0.3s;
     }
-    .feature-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
+    .service-card:hover .service-icon {
+      transform: scale(1.08);
     }
-    .feature-card p {
-      color: var(--gray);
-      font-size: 0.95rem;
+    .service-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
     }
 
-    /* Comparison */
-    .comparison {
+    /* ========== COMPARISON ========== */
+    .compare-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      max-width: 900px;
+      gap: 1.5rem;
+      max-width: 860px;
       margin: 0 auto;
     }
     @media (max-width: 700px) {
-      .comparison { grid-template-columns: 1fr; }
+      .compare-wrap { grid-template-columns: 1fr; }
     }
     .compare-card {
-      border-radius: 1rem;
-      padding: 2rem;
+      border-radius: 14px;
+      padding: 1.9rem;
       border: 1px solid var(--border);
     }
-    .compare-card.old {
+    .compare-card.bad {
       background: #fef2f2;
       border-color: #fecaca;
     }
-    .compare-card.new {
+    .compare-card.good {
       background: #f0fdfa;
       border-color: #99f6e4;
     }
     .compare-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
       margin-bottom: 1rem;
-      font-size: 1.25rem;
     }
-    .compare-card ul {
-      list-style: none;
-    }
+    .compare-card ul { list-style: none; }
     .compare-card li {
-      padding: 0.5rem 0;
       display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      color: var(--gray);
+      gap: 0.7rem;
+      padding: 0.45rem 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.45;
     }
-    .compare-card li::before {
-      content: "•";
-      font-weight: bold;
+    .compare-card li svg {
+      flex-shrink: 0;
+      margin-top: 3px;
     }
-    .compare-card.new li::before { color: var(--primary); }
-    .compare-card.old li::before { color: #ef4444; }
 
-    /* Testimonials */
+    /* ========== LOCAL BAND ========== */
+    .local-band {
+      background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+      color: white;
+      text-align: center;
+      padding: 4.5rem 0;
+    }
+    .local-band h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.8rem;
+    }
+    .local-band p {
+      color: #99f6e4;
+      max-width: 520px;
+      margin: 0 auto 2.2rem;
+      font-size: 1.05rem;
+    }
+    .local-pills {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .local-pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      padding: 0.9rem 1.4rem;
+      text-align: left;
+      min-width: 180px;
+      transition: background 0.25s;
+    }
+    .local-pill:hover { background: rgba(255,255,255,0.18); }
+    .local-pill strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.15rem;
+    }
+    .local-pill span {
+      font-size: 0.82rem;
+      opacity: 0.85;
+    }
+
+    /* ========== TESTIMONIALS ========== */
     .testimonials {
       background: var(--dark);
       color: white;
     }
-    .testimonials .section-header h2 { color: white; }
-    .testimonials .section-header p { color: #94a3b8; }
-    .testimonial-grid {
+    .testimonials .section-label { color: #5eead4; }
+    .testimonials .section-title { color: white; }
+    .testimonials .section-desc { color: #94a3b8; }
+    .testi-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
     }
-    .testimonial {
+    @media (max-width: 800px) {
+      .testi-grid { grid-template-columns: 1fr; }
+    }
+    .testi-card {
       background: #1e293b;
-      border-radius: 1rem;
-      padding: 1.75rem;
       border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 1.7rem;
+      transition: border-color 0.3s, transform 0.3s;
     }
-    .testimonial p {
-      font-style: italic;
-      margin-bottom: 1.25rem;
+    .testi-card:hover {
+      border-color: #475569;
+      transform: translateY(-3px);
+    }
+    .testi-card p {
+      font-size: 0.98rem;
+      line-height: 1.55;
       color: #e2e8f0;
+      margin-bottom: 1.3rem;
+      font-style: italic;
     }
-    .testimonial-author {
+    .testi-author {
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
-    .testimonial-role {
-      font-size: 0.85rem;
+    .testi-meta {
+      font-size: 0.82rem;
       color: #94a3b8;
+      margin-top: 0.15rem;
     }
 
-    /* Local focus */
-    .local-focus {
-      background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
-      color: white;
-      text-align: center;
-    }
-    .local-focus h2 { color: white; }
-    .local-focus p { color: #ccfbf1; max-width: 600px; margin: 0 auto 2rem; }
-    .local-stats {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-    .local-stat strong {
-      display: block;
-      font-size: 1.75rem;
-      font-weight: 800;
-    }
-
-    /* FAQ */
-    .faq-list {
-      max-width: 720px;
-      margin: 0 auto;
-    }
+    /* ========== FAQ ========== */
+    .faq-list { max-width: 680px; margin: 0 auto; }
     .faq-item {
       border-bottom: 1px solid var(--border);
-      padding: 1.5rem 0;
+      padding: 1.35rem 0;
     }
     .faq-item:first-child { border-top: 1px solid var(--border); }
-    .faq-question {
+    .faq-q {
       font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
+      user-select: none;
     }
-    .faq-answer {
-      color: var(--gray);
+    .faq-q span {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--muted);
+      transition: all 0.25s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-q span {
+      background: var(--green-soft);
+      color: var(--green);
+      transform: rotate(45deg);
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                  opacity 0.3s,
+                  margin 0.3s;
+      opacity: 0;
+      color: var(--muted);
       font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    .faq-item.open .faq-a {
+      max-height: 200px;
+      opacity: 1;
+      margin-top: 0.85rem;
     }
 
-    /* CTA */
+    /* ========== FINAL CTA ========== */
     .final-cta {
       text-align: center;
       background: var(--light);
-      padding: 5rem 0;
+      padding: 5.5rem 0;
     }
     .final-cta h2 {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      margin-bottom: 1rem;
+      font-size: clamp(1.7rem, 3.8vw, 2.3rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.8rem;
     }
     .final-cta p {
-      color: var(--gray);
-      margin-bottom: 2rem;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
+      color: var(--muted);
+      max-width: 460px;
+      margin: 0 auto 1.8rem;
+      font-size: 1.1rem;
     }
 
-    /* Footer */
+    /* ========== FOOTER ========== */
     footer {
       background: var(--dark);
       color: #94a3b8;
-      padding: 3rem 0 2rem;
-      font-size: 0.9rem;
+      padding: 2.8rem 0 2rem;
+      font-size: 0.88rem;
     }
-    .footer-content {
+    .footer-inner {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 1.5rem;
       margin-bottom: 2rem;
     }
     .footer-brand {
       font-weight: 700;
       color: white;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
     }
     .footer-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.8rem;
       list-style: none;
     }
     .footer-links a:hover { color: white; }
     .copyright {
-      border-top: 1px solid #334155;
-      padding-top: 1.5rem;
+      border-top: 1px solid #1e293b;
+      padding-top: 1.4rem;
       text-align: center;
+      font-size: 0.82rem;
     }
 
-    /* Mobile nav */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
+    /* ========== MOBILE ========== */
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .mobile-menu-btn { display: block; }
-      .hero { padding: 3.5rem 0 3rem; }
-      section { padding: 3.5rem 0; }
+      .hero { padding: 4rem 0 3.5rem; }
+      section { padding: 4rem 0; }
+      .stats-row { gap: 1.8rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
+
+  <!-- HEADER -->
+  <header id="header">
     <div class="container nav">
       <a href="#" class="logo">Lethbridge<span>Growth</span></a>
       <ul class="nav-links">
-        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#how">How it works</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#results">Results</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
-      <a href="#contact" class="btn btn-primary">Get a free audit</a>
+      <a href="#contact" class="btn btn-primary">Get free audit</a>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="badge">Built for Lethbridge & Southern Alberta</div>
-      <h1>Grow your local business with <span class="highlight">customers</span>, not just clicks.</h1>
-      <p>Effective digital marketing designed for Lethbridge businesses. Get found by real people in your community who are ready to buy — without wasting money on ads that don’t convert.</p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary btn-lg">Start growing free</a>
-        <a href="#how-it-works" class="btn btn-outline btn-lg">See how it works</a>
+      <div class="badge reveal">✦ Built for Lethbridge & Southern Alberta</div>
+      <h1 class="reveal reveal-delay-1">Grow your business with <em>real customers</em>, not just leads.</h1>
+      <p class="hero-sub reveal reveal-delay-2">Digital marketing that actually works for local Lethbridge businesses. Get found by people in your community who are ready to buy.</p>
+      <div class="hero-ctas reveal reveal-delay-3">
+        <a href="#contact" class="btn btn-primary btn-lg">Start growing →</a>
+        <a href="#how" class="btn btn-outline btn-lg">See how it works</a>
       </div>
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-number">3x</div>
+      <div class="stats-row reveal reveal-delay-4">
+        <div class="stat-item">
+          <div class="stat-num">3×</div>
           <div class="stat-label">more local visibility</div>
         </div>
-        <div class="stat">
-          <div class="stat-number">70%</div>
+        <div class="stat-item">
+          <div class="stat-num">70%</div>
           <div class="stat-label">new customers from search</div>
         </div>
-        <div class="stat">
-          <div class="stat-number">$0</div>
-          <div class="stat-label">upfront media spend risk</div>
+        <div class="stat-item">
+          <div class="stat-num">$0</div>
+          <div class="stat-label">upfront media risk</div>
         </div>
-        <div class="stat">
-          <div class="stat-number">Local</div>
-          <div class="stat-label">Lethbridge-first strategies</div>
+        <div class="stat-item">
+          <div class="stat-num">Local</div>
+          <div class="stat-label">Lethbridge-first focus</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How it works -->
-  <section id="how-it-works">
+  <!-- HOW IT WORKS -->
+  <section id="how">
     <div class="container">
       <div class="section-header">
-        <div class="badge">Simple process</div>
-        <h2>Start your growth campaign in days, not months.</h2>
-        <p>We handle the strategy, setup, and optimization so you can focus on serving customers in Lethbridge.</p>
+        <div class="section-label reveal">Simple process</div>
+        <h2 class="section-title reveal">Start your growth campaign in days, not months.</h2>
+        <p class="section-desc reveal">We handle strategy, setup and optimization so you can focus on serving customers.</p>
       </div>
       <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
+        <div class="step-card reveal">
+          <div class="step-num">1</div>
           <h3>We learn your business</h3>
-          <p>Quick call or form. We map your services, ideal customers, and the Lethbridge neighborhoods or towns you serve (Westside, Downtown, Coaldale, Taber, etc.).</p>
+          <p>Quick call. We map your services, ideal customers, and the Lethbridge neighbourhoods or towns you actually serve.</p>
         </div>
-        <div class="step">
-          <div class="step-number">2</div>
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-num">2</div>
           <h3>We build the plan</h3>
-          <p>Local SEO, Google Business Profile, targeted ads, and content that speaks to southern Alberta searchers. You approve everything before launch.</p>
+          <p>Local SEO, Google Business Profile, targeted ads and content that speaks to southern Alberta searchers. You approve before anything goes live.</p>
         </div>
-        <div class="step">
-          <div class="step-number">3</div>
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-num">3</div>
           <h3>You get real customers</h3>
-          <p>Track calls, form fills, and foot traffic. Clear monthly reporting shows what’s working so we keep improving together.</p>
+          <p>Track calls, form fills and foot traffic. Clear monthly reporting shows what’s working so we keep improving together.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
-  <section id="services" class="features">
+  <!-- SERVICES -->
+  <section id="services" class="services">
     <div class="container">
       <div class="section-header">
-        <div class="badge">What we do</div>
-        <h2>Digital marketing that works for Lethbridge businesses.</h2>
-        <p>From agriculture suppliers and home services to clinics, restaurants, and retail — strategies built around how people actually search and buy in southern Alberta.</p>
+        <div class="section-label reveal">What we do</div>
+        <h2 class="section-title reveal">Marketing that works for Lethbridge businesses.</h2>
+        <p class="section-desc reveal">From home services and clinics to restaurants and retail — strategies built around how people actually search and buy here.</p>
       </div>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">📍</div>
+      <div class="service-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">📍</div>
           <h3>Local SEO & Google Maps</h3>
-          <p>Rank in the “near me” pack for Lethbridge searches. Optimized Google Business Profile, citations, and reviews that drive calls and direction requests.</p>
+          <p>Rank in the “near me” pack. Optimized Google Business Profile, citations and reviews that drive calls and direction requests.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔍</div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">🔍</div>
           <h3>Google Ads & PPC</h3>
-          <p>High-intent search ads that only spend when someone is looking for what you offer. Tight geo-targeting across Lethbridge and surrounding communities.</p>
+          <p>High-intent search ads that only spend when someone is looking for what you offer. Tight geo-targeting across Lethbridge and surrounding towns.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>Social Media & Content</h3>
-          <p>Consistent presence on Facebook, Instagram, and Google that builds trust with local residents and University of Lethbridge students and staff.</p>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">📱</div>
+          <h3>Social & Content</h3>
+          <p>Consistent presence that builds trust with local residents and University of Lethbridge students and staff.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🌐</div>
-          <h3>Website that converts</h3>
-          <p>Fast, mobile-first sites with clear calls-to-action, service pages, and tracking so every visitor has a path to become a customer.</p>
+        <div class="service-card reveal">
+          <div class="service-icon">🌐</div>
+          <h3>Websites that convert</h3>
+          <p>Fast, mobile-first sites with clear calls-to-action and tracking so every visitor has a path to become a customer.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">📊</div>
           <h3>Analytics & Reporting</h3>
-          <p>Simple dashboards showing leads, calls, and ROI. No jargon — just the numbers that matter to a busy Lethbridge business owner.</p>
+          <p>Simple dashboards showing leads, calls and ROI. No jargon — just the numbers that matter to a busy owner.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🤝</div>
-          <h3>Reputation management</h3>
-          <p>More 5-star reviews on Google and strategic responses that turn happy customers into your best local marketing channel.</p>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">⭐</div>
+          <h3>Reputation</h3>
+          <p>More 5-star Google reviews and smart responses that turn happy customers into your best local marketing channel.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Comparison -->
+  <!-- COMPARISON -->
   <section>
     <div class="container">
       <div class="section-header">
-        <div class="badge">Performance model</div>
-        <h2>Pay for results that matter, not empty clicks.</h2>
-        <p>Traditional ads ask you to buy attention and hope. We focus on visibility and conversion that brings actual Lethbridge customers through your door or onto your calendar.</p>
+        <div class="section-label reveal">Performance model</div>
+        <h2 class="section-title reveal">Pay for results that matter, not empty clicks.</h2>
+        <p class="section-desc reveal">Traditional ads ask you to buy attention and hope. We focus on visibility and conversion that brings actual customers.</p>
       </div>
-      <div class="comparison">
-        <div class="compare-card old">
+      <div class="compare-wrap">
+        <div class="compare-card bad reveal">
           <h3>The old way</h3>
           <ul>
-            <li>Upfront ad budgets with uncertain return</li>
-            <li>Generic campaigns that ignore local search behavior</li>
-            <li>Reports full of vanity metrics</li>
-            <li>One-size-fits-all strategies from big cities</li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/></svg>
+              Upfront ad budgets with uncertain return
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/></svg>
+              Generic campaigns that ignore local search behaviour
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/></svg>
+              Reports full of vanity metrics
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/></svg>
+              One-size-fits-all strategies from big cities
+            </li>
           </ul>
         </div>
-        <div class="compare-card new">
+        <div class="compare-card good reveal reveal-delay-1">
           <h3>Our approach</h3>
           <ul>
-            <li>Strategies built around Lethbridge search demand</li>
-            <li>Clear tracking from click to call or booking</li>
-            <li>Transparent reporting tied to real business outcomes</li>
-            <li>Local knowledge of seasons, university calendar & communities</li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5 6.5-7" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Strategies built around Lethbridge search demand
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5 6.5-7" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Clear tracking from click → call or booking
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5 6.5-7" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Transparent reporting tied to real outcomes
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5 6.5-7" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Local knowledge of seasons, university calendar & communities
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Local focus banner -->
-  <section class="local-focus">
+  <!-- LOCAL BAND -->
+  <section class="local-band">
     <div class="container">
-      <h2>We understand Lethbridge.</h2>
-      <p>From the University of Lethbridge and Chinook Regional Hospital to the irrigation districts and the towns that shop here — your marketing should reflect the real local economy.</p>
-      <div class="local-stats">
-        <div class="local-stat">
+      <h2 class="reveal">We actually understand Lethbridge.</h2>
+      <p class="reveal">From the University of Lethbridge and Chinook Regional Hospital to the irrigation districts and the towns that shop here.</p>
+      <div class="local-pills">
+        <div class="local-pill reveal">
           <strong>West Lethbridge</strong>
-          <span>Growing residential & student market</span>
+          <span>Residential & student market</span>
         </div>
-        <div class="local-stat">
+        <div class="local-pill reveal reveal-delay-1">
           <strong>Downtown & South</strong>
-          <span>Core retail, services & healthcare</span>
+          <span>Retail, services & healthcare</span>
         </div>
-        <div class="local-stat">
+        <div class="local-pill reveal reveal-delay-2">
           <strong>Surrounding towns</strong>
-          <span>Coaldale, Taber, Picture Butte & more</span>
+          <span>Coaldale, Taber, Picture Butte…</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- TESTIMONIALS -->
   <section id="results" class="testimonials">
     <div class="container">
       <div class="section-header">
-        <div class="badge" style="background:#134e4a;color:#5eead4;">Merchant proof</div>
-        <h2>Local businesses talk. The numbers back them up.</h2>
-        <p>Real outcomes from owners who needed more of the right customers in Lethbridge and southern Alberta.</p>
+        <div class="section-label reveal">Merchant proof</div>
+        <h2 class="section-title reveal">Local businesses talk. The numbers back them up.</h2>
+        <p class="section-desc reveal">Real outcomes from owners who needed more of the right customers in Lethbridge.</p>
       </div>
-      <div class="testimonial-grid">
-        <div class="testimonial">
+      <div class="testi-grid">
+        <div class="testi-card reveal">
           <p>“We were invisible on Google Maps. Within three months we were ranking in the top 3 for our main services and the phone started ringing from people who actually live here.”</p>
-          <div class="testimonial-author">Home services owner</div>
-          <div class="testimonial-role">Lethbridge • Since 2024</div>
+          <div class="testi-author">Home services owner</div>
+          <div class="testi-meta">Lethbridge · since 2024</div>
         </div>
-        <div class="testimonial">
+        <div class="testi-card reveal reveal-delay-1">
           <p>“Slow weekdays used to kill us. Targeted local ads and a stronger Google profile filled the gaps without discounting the whole menu.”</p>
-          <div class="testimonial-author">Restaurant owner</div>
-          <div class="testimonial-role">Downtown Lethbridge • Since 2023</div>
+          <div class="testi-author">Restaurant owner</div>
+          <div class="testi-meta">Downtown Lethbridge · since 2023</div>
         </div>
-        <div class="testimonial">
+        <div class="testi-card reveal reveal-delay-2">
           <p>“I finally understand which marketing is making money. The reports are clear and the team actually knows the difference between Westside and Southside searchers.”</p>
-          <div class="testimonial-author">Clinic manager</div>
-          <div class="testimonial-role">West Lethbridge • Since 2025</div>
+          <div class="testi-author">Clinic manager</div>
+          <div class="testi-meta">West Lethbridge · since 2025</div>
         </div>
       </div>
     </div>
@@ -653,68 +846,102 @@
   <section id="faq">
     <div class="container">
       <div class="section-header">
-        <div class="badge">Questions</div>
-        <h2>Every question we get on the first call.</h2>
-        <p>Cost, timelines, what works in Lethbridge, and how we measure success.</p>
+        <div class="section-label reveal">Questions</div>
+        <h2 class="section-title reveal">Every question we get on the first call.</h2>
       </div>
       <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-question">How much does effective digital marketing cost for a Lethbridge business?</div>
-          <div class="faq-answer">It depends on your goals and competition, but most local businesses start with a focused package between a few hundred and a couple thousand dollars per month. We always show projected ROI before you commit.</div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            How much does this cost for a Lethbridge business?
+            <span>+</span>
+          </div>
+          <div class="faq-a">Most local businesses start between a few hundred and a couple thousand dollars per month depending on goals and competition. We always show projected ROI before you commit.</div>
         </div>
-        <div class="faq-item">
-          <div class="faq-question">Will this bring bargain hunters or the wrong customers?</div>
-          <div class="faq-answer">No. We target people actively searching for your services in Lethbridge and surrounding areas. Messaging and offers are designed to attract customers who value quality, not just the lowest price.</div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            Will this bring bargain hunters?
+            <span>+</span>
+          </div>
+          <div class="faq-a">No. We target people actively searching for your services in Lethbridge and surrounding areas. Messaging is designed to attract customers who value quality.</div>
         </div>
-        <div class="faq-item">
-          <div class="faq-question">How long until I see results?</div>
-          <div class="faq-answer">Google Ads can generate leads in days. Local SEO and organic growth typically show meaningful movement in 60–90 days. We set clear milestones so you know what to expect.</div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            How long until I see results?
+            <span>+</span>
+          </div>
+          <div class="faq-a">Google Ads can generate leads in days. Local SEO and organic growth typically show meaningful movement in 60–90 days. We set clear milestones.</div>
         </div>
-        <div class="faq-item">
-          <div class="faq-question">Do I need a new website?</div>
-          <div class="faq-answer">Not always. Many businesses just need better tracking, clearer service pages, and mobile speed improvements. We audit first and only recommend changes that move the needle.</div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            Do I need a brand new website?
+            <span>+</span>
+          </div>
+          <div class="faq-a">Not always. Many businesses just need better tracking, clearer service pages and mobile speed. We audit first and only recommend changes that move the needle.</div>
         </div>
-        <div class="faq-item">
-          <div class="faq-question">What makes this different from big agencies or DIY?</div>
-          <div class="faq-answer">We specialize in southern Alberta. We understand seasonal demand, the university calendar, irrigation and agriculture cycles, and how Lethbridge residents actually search and choose local providers.</div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            What makes this different from big agencies?
+            <span>+</span>
+          </div>
+          <div class="faq-a">We specialize in southern Alberta. We understand seasonal demand, the university calendar, irrigation cycles, and how Lethbridge residents actually search and choose local providers.</div>
         </div>
-        <div class="faq-item">
-          <div class="faq-question">Can I pause or adjust if I’m fully booked?</div>
-          <div class="faq-answer">Yes. Campaigns are flexible. We can throttle ads, focus on reputation, or shift to longer-term SEO when capacity is tight.</div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            Can I pause if I’m fully booked?
+            <span>+</span>
+          </div>
+          <div class="faq-a">Yes. Campaigns are flexible. We can throttle ads, focus on reputation, or shift to longer-term SEO when capacity is tight.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Final CTA -->
+  <!-- FINAL CTA -->
   <section id="contact" class="final-cta">
     <div class="container">
-      <h2>Ready to get more of the right customers in Lethbridge?</h2>
-      <p>Book a free 20-minute strategy call. We’ll look at your current online presence and show you exactly where the biggest opportunities are.</p>
-      <a href="mailto:hello@lethbridgegrowth.example" class="btn btn-primary btn-lg">Get your free audit</a>
-      <p style="margin-top:1.5rem;font-size:0.9rem;color:var(--gray);">No pressure. No long-term contracts required to start.</p>
+      <h2 class="reveal">Ready to get more of the right customers in Lethbridge?</h2>
+      <p class="reveal">Book a free 20-minute strategy call. We’ll look at your current online presence and show you exactly where the biggest opportunities are.</p>
+      <a href="mailto:hello@lethbridgegrowth.example" class="btn btn-primary btn-lg reveal">Get your free audit →</a>
+      <p class="reveal" style="margin-top:1.3rem;font-size:0.88rem;color:var(--muted);">No pressure. No long-term contracts required to start.</p>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
-      <div class="footer-content">
+      <div class="footer-inner">
         <div>
           <div class="footer-brand">Lethbridge Growth</div>
-          <p>Effective digital marketing for local businesses in Lethbridge and southern Alberta.</p>
+          <p>Effective digital marketing for local businesses in Lethbridge & southern Alberta.</p>
         </div>
         <ul class="footer-links">
-          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#how">How it works</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
-      <div class="copyright">
-        © 2026 Lethbridge Growth. Built for local businesses in Lethbridge, Alberta.
-      </div>
+      <div class="copyright">© 2026 Lethbridge Growth · Built for local businesses in Lethbridge, Alberta</div>
     </div>
   </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Header shadow on scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  </script>
 </body>
 </html>
