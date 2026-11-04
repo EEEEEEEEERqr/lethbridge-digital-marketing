@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Effective Digital Marketing for Local Businesses in Lethbridge, Alberta</title>
+  <meta name="description" content="Grow your Lethbridge business with proven digital marketing. SEO, Google Ads, social media & websites tailored for southern Alberta local businesses. No fluff — real customers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0d9488;
+      --primary-dark: #0f766e;
+      --primary-light: #14b8a6;
+      --accent: #f59e0b;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background: var(--white);
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo span { color: var(--dark); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-weight: 500;
+      color: var(--gray);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-lg {
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 5rem 0 4rem;
+      background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      color: var(--dark);
+    }
+    .hero h1 .highlight {
+      color: var(--primary);
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--gray);
+      max-width: 640px;
+      margin: 0 auto 2rem;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-top: 0.35rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 0;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3.5rem;
+    }
+    .section-header h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .section-header p {
+      color: var(--gray);
+      font-size: 1.125rem;
+    }
+    .badge {
+      display: inline-block;
+      background: #ccfbf1;
+      color: var(--primary-dark);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    /* How it works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .step {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.25s;
+    }
+    .step:hover {
+      border-color: var(--primary-light);
+      box-shadow: 0 10px 30px rgba(13, 148, 136, 0.08);
+      transform: translateY(-4px);
+    }
+    .step-number {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+    .step h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .step p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* Services / Features */
+    .features {
+      background: var(--light);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid var(--border);
+    }
+    .feature-icon {
+      width: 3rem;
+      height: 3rem;
+      background: #ccfbf1;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .feature-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+    .feature-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* Comparison */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    @media (max-width: 700px) {
+      .comparison { grid-template-columns: 1fr; }
+    }
+    .compare-card {
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid var(--border);
+    }
+    .compare-card.old {
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+    .compare-card.new {
+      background: #f0fdfa;
+      border-color: #99f6e4;
+    }
+    .compare-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+    .compare-card ul {
+      list-style: none;
+    }
+    .compare-card li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      color: var(--gray);
+    }
+    .compare-card li::before {
+      content: "•";
+      font-weight: bold;
+    }
+    .compare-card.new li::before { color: var(--primary); }
+    .compare-card.old li::before { color: #ef4444; }
+
+    /* Testimonials */
+    .testimonials {
+      background: var(--dark);
+      color: white;
+    }
+    .testimonials .section-header h2 { color: white; }
+    .testimonials .section-header p { color: #94a3b8; }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .testimonial {
+      background: #1e293b;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      border: 1px solid #334155;
+    }
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 1.25rem;
+      color: #e2e8f0;
+    }
+    .testimonial-author {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .testimonial-role {
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    /* Local focus */
+    .local-focus {
+      background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+      color: white;
+      text-align: center;
+    }
+    .local-focus h2 { color: white; }
+    .local-focus p { color: #ccfbf1; max-width: 600px; margin: 0 auto 2rem; }
+    .local-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .local-stat strong {
+      display: block;
+      font-size: 1.75rem;
+      font-weight: 800;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .final-cta {
+      text-align: center;
+      background: var(--light);
+      padding: 5rem 0;
+    }
+    .final-cta h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+    .final-cta p {
+      color: var(--gray);
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: #94a3b8;
+      padding: 3rem 0 2rem;
+      font-size: 0.9rem;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer-brand {
+      font-weight: 700;
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .footer-links a:hover { color: white; }
+    .copyright {
+      border-top: 1px solid #334155;
+      padding-top: 1.5rem;
+      text-align: center;
+    }
+
+    /* Mobile nav */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .hero { padding: 3.5rem 0 3rem; }
+      section { padding: 3.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">Lethbridge<span>Growth</span></a>
+      <ul class="nav-links">
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">Get a free audit</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">Built for Lethbridge & Southern Alberta</div>
+      <h1>Grow your local business with <span class="highlight">customers</span>, not just clicks.</h1>
+      <p>Effective digital marketing designed for Lethbridge businesses. Get found by real people in your community who are ready to buy — without wasting money on ads that don’t convert.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary btn-lg">Start growing free</a>
+        <a href="#how-it-works" class="btn btn-outline btn-lg">See how it works</a>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-number">3x</div>
+          <div class="stat-label">more local visibility</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">70%</div>
+          <div class="stat-label">new customers from search</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">$0</div>
+          <div class="stat-label">upfront media spend risk</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">Local</div>
+          <div class="stat-label">Lethbridge-first strategies</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Simple process</div>
+        <h2>Start your growth campaign in days, not months.</h2>
+        <p>We handle the strategy, setup, and optimization so you can focus on serving customers in Lethbridge.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>We learn your business</h3>
+          <p>Quick call or form. We map your services, ideal customers, and the Lethbridge neighborhoods or towns you serve (Westside, Downtown, Coaldale, Taber, etc.).</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>We build the plan</h3>
+          <p>Local SEO, Google Business Profile, targeted ads, and content that speaks to southern Alberta searchers. You approve everything before launch.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>You get real customers</h3>
+          <p>Track calls, form fills, and foot traffic. Clear monthly reporting shows what’s working so we keep improving together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">What we do</div>
+        <h2>Digital marketing that works for Lethbridge businesses.</h2>
+        <p>From agriculture suppliers and home services to clinics, restaurants, and retail — strategies built around how people actually search and buy in southern Alberta.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📍</div>
+          <h3>Local SEO & Google Maps</h3>
+          <p>Rank in the “near me” pack for Lethbridge searches. Optimized Google Business Profile, citations, and reviews that drive calls and direction requests.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>Google Ads & PPC</h3>
+          <p>High-intent search ads that only spend when someone is looking for what you offer. Tight geo-targeting across Lethbridge and surrounding communities.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Social Media & Content</h3>
+          <p>Consistent presence on Facebook, Instagram, and Google that builds trust with local residents and University of Lethbridge students and staff.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3>Website that converts</h3>
+          <p>Fast, mobile-first sites with clear calls-to-action, service pages, and tracking so every visitor has a path to become a customer.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Analytics & Reporting</h3>
+          <p>Simple dashboards showing leads, calls, and ROI. No jargon — just the numbers that matter to a busy Lethbridge business owner.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Reputation management</h3>
+          <p>More 5-star reviews on Google and strategic responses that turn happy customers into your best local marketing channel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Performance model</div>
+        <h2>Pay for results that matter, not empty clicks.</h2>
+        <p>Traditional ads ask you to buy attention and hope. We focus on visibility and conversion that brings actual Lethbridge customers through your door or onto your calendar.</p>
+      </div>
+      <div class="comparison">
+        <div class="compare-card old">
+          <h3>The old way</h3>
+          <ul>
+            <li>Upfront ad budgets with uncertain return</li>
+            <li>Generic campaigns that ignore local search behavior</li>
+            <li>Reports full of vanity metrics</li>
+            <li>One-size-fits-all strategies from big cities</li>
+          </ul>
+        </div>
+        <div class="compare-card new">
+          <h3>Our approach</h3>
+          <ul>
+            <li>Strategies built around Lethbridge search demand</li>
+            <li>Clear tracking from click to call or booking</li>
+            <li>Transparent reporting tied to real business outcomes</li>
+            <li>Local knowledge of seasons, university calendar & communities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local focus banner -->
+  <section class="local-focus">
+    <div class="container">
+      <h2>We understand Lethbridge.</h2>
+      <p>From the University of Lethbridge and Chinook Regional Hospital to the irrigation districts and the towns that shop here — your marketing should reflect the real local economy.</p>
+      <div class="local-stats">
+        <div class="local-stat">
+          <strong>West Lethbridge</strong>
+          <span>Growing residential & student market</span>
+        </div>
+        <div class="local-stat">
+          <strong>Downtown & South</strong>
+          <span>Core retail, services & healthcare</span>
+        </div>
+        <div class="local-stat">
+          <strong>Surrounding towns</strong>
+          <span>Coaldale, Taber, Picture Butte & more</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="results" class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge" style="background:#134e4a;color:#5eead4;">Merchant proof</div>
+        <h2>Local businesses talk. The numbers back them up.</h2>
+        <p>Real outcomes from owners who needed more of the right customers in Lethbridge and southern Alberta.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p>“We were invisible on Google Maps. Within three months we were ranking in the top 3 for our main services and the phone started ringing from people who actually live here.”</p>
+          <div class="testimonial-author">Home services owner</div>
+          <div class="testimonial-role">Lethbridge • Since 2024</div>
+        </div>
+        <div class="testimonial">
+          <p>“Slow weekdays used to kill us. Targeted local ads and a stronger Google profile filled the gaps without discounting the whole menu.”</p>
+          <div class="testimonial-author">Restaurant owner</div>
+          <div class="testimonial-role">Downtown Lethbridge • Since 2023</div>
+        </div>
+        <div class="testimonial">
+          <p>“I finally understand which marketing is making money. The reports are clear and the team actually knows the difference between Westside and Southside searchers.”</p>
+          <div class="testimonial-author">Clinic manager</div>
+          <div class="testimonial-role">West Lethbridge • Since 2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Questions</div>
+        <h2>Every question we get on the first call.</h2>
+        <p>Cost, timelines, what works in Lethbridge, and how we measure success.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">How much does effective digital marketing cost for a Lethbridge business?</div>
+          <div class="faq-answer">It depends on your goals and competition, but most local businesses start with a focused package between a few hundred and a couple thousand dollars per month. We always show projected ROI before you commit.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Will this bring bargain hunters or the wrong customers?</div>
+          <div class="faq-answer">No. We target people actively searching for your services in Lethbridge and surrounding areas. Messaging and offers are designed to attract customers who value quality, not just the lowest price.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How long until I see results?</div>
+          <div class="faq-answer">Google Ads can generate leads in days. Local SEO and organic growth typically show meaningful movement in 60–90 days. We set clear milestones so you know what to expect.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do I need a new website?</div>
+          <div class="faq-answer">Not always. Many businesses just need better tracking, clearer service pages, and mobile speed improvements. We audit first and only recommend changes that move the needle.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What makes this different from big agencies or DIY?</div>
+          <div class="faq-answer">We specialize in southern Alberta. We understand seasonal demand, the university calendar, irrigation and agriculture cycles, and how Lethbridge residents actually search and choose local providers.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I pause or adjust if I’m fully booked?</div>
+          <div class="faq-answer">Yes. Campaigns are flexible. We can throttle ads, focus on reputation, or shift to longer-term SEO when capacity is tight.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="contact" class="final-cta">
+    <div class="container">
+      <h2>Ready to get more of the right customers in Lethbridge?</h2>
+      <p>Book a free 20-minute strategy call. We’ll look at your current online presence and show you exactly where the biggest opportunities are.</p>
+      <a href="mailto:hello@lethbridgegrowth.example" class="btn btn-primary btn-lg">Get your free audit</a>
+      <p style="margin-top:1.5rem;font-size:0.9rem;color:var(--gray);">No pressure. No long-term contracts required to start.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-brand">Lethbridge Growth</div>
+          <p>Effective digital marketing for local businesses in Lethbridge and southern Alberta.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="copyright">
+        © 2026 Lethbridge Growth. Built for local businesses in Lethbridge, Alberta.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
